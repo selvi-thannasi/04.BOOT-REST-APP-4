@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/personal")
 public class AgeRestController {
-
+	
 	@GetMapping("/age")
 	// public ResponseEntity<String> calculateAge(@RequestParam Integer yob) {
 	public ResponseEntity<String> calculateAge(
@@ -25,7 +25,7 @@ public class AgeRestController {
 		return new ResponseEntity<String>("Hi, sorry you have an Invalid Year of Birth (or) a Future Year is given",
 				HttpStatus.BAD_REQUEST);
 	}
-
+	//added the logic
 	private int ageCalcLogic(Integer yob) {
 		int currentYear = Calendar.getInstance().get(Calendar.YEAR);
 		return currentYear - yob;
